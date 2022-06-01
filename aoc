@@ -1,0 +1,8 @@
+#!/bin/sh
+day=$1
+echo "#!/usr/bin/python3\nimport sys\n" >> "$day.py"
+echo "infile = sys.argv[1] if len(sys.argv) > 1 else \"$day.in\"\n" >> "$day.py"
+echo "X = []\na = 0" >> "$day.py"
+echo "for line in open(infile):\n    X.append(line)" >> "$day.py"
+touch "$day.in"
+chmod +x 3.py
